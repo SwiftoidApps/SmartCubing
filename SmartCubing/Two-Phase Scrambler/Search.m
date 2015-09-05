@@ -18,8 +18,9 @@
 #import "CoordCube.h"
 #import "Util.h"
 #import "Sys/time.h"
+#import "RandomNumber.h"
 
-static int move[31];
+static int moveArray[31];
 
 static int corn[20];
 static int mid4[20];
@@ -316,7 +317,7 @@ int phase1(int twist, int tsym, int flip, int fsym, int slice, int maxl, int lm)
             } else if (prun == maxl) {
                 continue;
             }
-            move[depth1-maxl] = m;
+            moveArray[depth1-maxl] = m;
             valid1 = MIN(valid1, depth1-maxl);
             int ret = phase1(twistx, tsymx, flipx, fsymx, slicex, maxl-1, axis);
             if (ret != 1) {
@@ -341,7 +342,7 @@ int initPhase2() {
     int cidx = (unsigned)corn[valid1] >> (unsigned)4;
     int csym = corn[valid1] & 0xf;
     for (int i=valid1; i<depth1; i++) {
-        int m = move[i];
+        int m = moveArray[i];
         cidx = CPermMove[cidx][SymMove[csym][m]];
         csym = SymMult[cidx & 0xf][csym];
         cidx >>= (unsigned)4;
@@ -360,7 +361,7 @@ int initPhase2() {
     int u4e = (unsigned)ud8e[valid2] >> (unsigned)16;
     int d4e = ud8e[valid2] & 0xffff;
     for (int i=valid2; i<depth1; i++) {
-        int m = move[i];
+        int m = moveArray[i];
         
         int cx = UDSliceMove[u4e & 0x1ff][m];
         u4e = permMult[(unsigned)u4e>>(unsigned)9][(unsigned)cx>>(unsigned)9]<<9|(cx&0x1ff);
@@ -381,7 +382,7 @@ int initPhase2() {
         return prun > maxDep2 ? 2 : 1;
     }
     
-    int lm = depth1==0 ? 10 : std2ud[move[depth1-1]/3*3+1];
+    int lm = depth1==0 ? 10 : std2ud[moveArray[depth1-1]/3*3+1];
     for (int depth2=prun; depth2<maxDep2; depth2++) {
         if (phase2(edge, esym, cidx, csym, mid, depth2, depth1, lm)) {
             sol = depth1 + depth2;
@@ -417,7 +418,7 @@ BOOL phase2(int eidx, int esym, int cidx, int csym, int mid, int maxl, int depth
             continue;
         }
         if (phase2(eidxx, esymx, cidxx, csymx, midx, maxl-1, depth+1, m)) {
-            move[depth] = ud2std[m];
+            moveArray[depth] = ud2std[m];
             return true;
         }
     }
@@ -430,17 +431,17 @@ NSString* solutionToString() {
     int urf = (verbose & INVERSE_SOLUTION) != 0 ? (urfIdx + 3) % 6 : urfIdx;
     if (urf < 3) {
         for (int s=0; s<depth1; s++) {
-            [solution appendFormat:@"%@ ",[move2str objectAtIndex:(urfMove[urf][move[s]])]];
+            [solution appendFormat:@"%@ ",[move2str objectAtIndex:(urfMove[urf][moveArray[s]])]];
         }
         for (int s=depth1; s<sol; s++) {
-            [solution appendFormat:@"%@ ",[move2str objectAtIndex:(urfMove[urf][move[s]])]];
+            [solution appendFormat:@"%@ ",[move2str objectAtIndex:(urfMove[urf][moveArray[s]])]];
         }
     } else {
         for (int s=sol-1; s>=depth1; s--) {
-            [solution appendFormat:@"%@ ",[move2str objectAtIndex:(urfMove[urf][move[s]])]];
+            [solution appendFormat:@"%@ ",[move2str objectAtIndex:(urfMove[urf][moveArray[s]])]];
         }
         for (int s=depth1-1; s>=0; s--) {
-            [solution appendFormat:@"%@ ",[move2str objectAtIndex:(urfMove[urf][move[s]])]];
+            [solution appendFormat:@"%@ ",[move2str objectAtIndex:(urfMove[urf][moveArray[s]])]];
         }
     }
     return solution;

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RandomNumber.h"
 
 @interface PyraminxRandomStateScrambler : NSObject
 
