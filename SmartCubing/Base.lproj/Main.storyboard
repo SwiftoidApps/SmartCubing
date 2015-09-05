@@ -15,17 +15,26 @@
                     <view key="view" contentMode="scaleToFill" id="qRB-PO-ymW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vir-IJ-yLu">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Session Stats" id="8pt-jF-aLw"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stats" id="3BD-Zg-PSj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UbZ-5h-9gf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="926" y="1699"/>
+            <point key="canvasLocation" x="938" y="1875"/>
         </scene>
         <!--Timer-->
         <scene sceneID="Pv5-oh-kcG">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Alw-zN-jx0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="kHY-Sk-ddY" userLabel="Timer" customClass="TimerViewController" customModule="SmartCubing" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lSF-X5-Al1"/>
@@ -39,31 +48,69 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Smart Cubing" id="KLg-Ji-FZI">
-                                        <barButtonItem key="leftBarButtonItem" title="3x3" id="ezy-Zz-OvC"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Settings" id="7vO-bY-4NR">
+                                        <barButtonItem key="leftBarButtonItem" title="4x4" id="ezy-Zz-OvC">
                                             <connections>
-                                                <segue destination="3PV-16-F2m" kind="show" id="230-qF-KTo"/>
+                                                <segue destination="YPU-VN-EEy" kind="popoverPresentation" identifier="selectScrambleSegue" popoverAnchorBarButtonItem="ezy-Zz-OvC" id="Byb-v3-cGD">
+                                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                </segue>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Add Penalty" id="9Vi-xS-DmQ"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coz-jN-3AS">
-                                <rect key="frame" x="279" y="317" width="165" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" id="Pmf-jp-IXz"/>
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="selectScrambleType" destination="ezy-Zz-OvC" id="zPM-Dk-kU4"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Alw-zN-jx0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="926" y="1037"/>
+        </scene>
+        <!--Select Scramble Style View Controller-->
+        <scene sceneID="czd-re-TTl">
+            <objects>
+                <viewController id="YPU-VN-EEy" customClass="SelectScrambleStyleViewController" customModule="SmartCubing" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FhQ-Xx-kDi"/>
+                        <viewControllerLayoutGuide type="bottom" id="BFW-yg-JXm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SuV-AQ-EI7">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="220"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5EB-zY-xmF">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krs-3H-ZcR">
+                                <rect key="frame" x="147" y="190" width="37" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnDoneClicked:" destination="YPU-VN-EEy" eventType="touchUpInside" id="6aE-By-cIM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="200" height="220"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="200" height="220"/>
+                    <connections>
+                        <outlet property="picker" destination="5EB-zY-xmF" id="N7X-Zo-Bgt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IB8-wt-SLZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="63" y="606"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="KC4-YZ-gRR">
@@ -78,16 +125,17 @@
                     <connections>
                         <segue destination="kHY-Sk-ddY" kind="relationship" relationship="viewControllers" id="NKN-Bp-eyJ"/>
                         <segue destination="LS8-iG-eHX" kind="relationship" relationship="viewControllers" id="luR-5K-FrG"/>
+                        <segue destination="3PV-16-F2m" kind="relationship" relationship="viewControllers" id="Bie-vJ-bkn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8U-qz-xUS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="106" y="1367"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="jQN-Iz-TjL">
             <objects>
-                <viewController id="3PV-16-F2m" customClass="SettingsViewController" customModule="SmartCubing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Settings" id="3PV-16-F2m" customClass="SettingsViewController" customModule="SmartCubing" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="skL-Ra-ESe"/>
                         <viewControllerLayoutGuide type="bottom" id="Kzo-CH-m6l"/>
@@ -99,24 +147,20 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hyg-yM-Orv">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="ROv-sT-9Yn">
+                                    <navigationItem title="Settings" id="ROv-sT-9Yn">
                                         <barButtonItem key="backBarButtonItem" title="Back" id="lu9-6N-2jl"/>
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="zCO-Qd-hRb">
-                                            <connections>
-                                                <segue destination="BBg-5F-onR" kind="show" id="Xqg-Ig-fFY"/>
-                                            </connections>
-                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Settings" id="w7x-7t-VwC"/>
                     <toolbarItems/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRf-UC-aNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1637" y="483"/>
+            <point key="canvasLocation" x="938" y="2795"/>
         </scene>
     </scenes>
 </document>
