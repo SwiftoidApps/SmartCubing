@@ -1,42 +1,93 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1112" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1112" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BBg-5F-onR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
-        <!--Timer View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Session Stats-->
+        <scene sceneID="coV-0J-Nht">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="TimerViewController" customModule="SmartCubing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LS8-iG-eHX" userLabel="Session Stats" customClass="StatsViewController" customModule="SmartCubing" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="zSC-XK-aJS"/>
+                        <viewControllerLayoutGuide type="bottom" id="N1F-HT-hvv"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="qRB-PO-ymW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Stats" id="3BD-Zg-PSj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UbZ-5h-9gf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="926" y="1699"/>
+        </scene>
+        <!--Timer-->
+        <scene sceneID="Pv5-oh-kcG">
+            <objects>
+                <viewController id="kHY-Sk-ddY" userLabel="Timer" customClass="TimerViewController" customModule="SmartCubing" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lSF-X5-Al1"/>
+                        <viewControllerLayoutGuide type="bottom" id="JrP-ru-VR8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CyA-mU-pI8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tHb-C9-bb5">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gAA-5J-jJt">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Smart Cubing" id="05x-wG-yYd"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Ygt-di-tWS"/>
-                                    <barButtonItem title="3x3" id="Nsd-BN-lAU"/>
-                                    <barButtonItem title="Item" id="qgi-7E-qeh"/>
+                                    <navigationItem title="Smart Cubing" id="KLg-Ji-FZI">
+                                        <barButtonItem key="leftBarButtonItem" title="3x3" id="ezy-Zz-OvC"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Settings" id="7vO-bY-4NR">
+                                            <connections>
+                                                <segue destination="3PV-16-F2m" kind="show" id="230-qF-KTo"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
-                            </toolbar>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coz-jN-3AS">
+                                <rect key="frame" x="279" y="317" width="165" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Timer" id="Pmf-jp-IXz"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Alw-zN-jx0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="412" y="220"/>
+            <point key="canvasLocation" x="926" y="1037"/>
         </scene>
-        <!--Stats View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="KC4-YZ-gRR">
+            <objects>
+                <tabBarController id="BBg-5F-onR" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="7bB-lG-suy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="kHY-Sk-ddY" kind="relationship" relationship="viewControllers" id="NKN-Bp-eyJ"/>
+                        <segue destination="LS8-iG-eHX" kind="relationship" relationship="viewControllers" id="luR-5K-FrG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G8U-qz-xUS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="106" y="1367"/>
+        </scene>
+        <!--Settings View Controller-->
         <scene sceneID="jQN-Iz-TjL">
             <objects>
-                <viewController id="3PV-16-F2m" customClass="StatsViewController" customModule="SmartCubing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3PV-16-F2m" customClass="SettingsViewController" customModule="SmartCubing" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="skL-Ra-ESe"/>
                         <viewControllerLayoutGuide type="bottom" id="Kzo-CH-m6l"/>
@@ -44,60 +95,28 @@
                     <view key="view" contentMode="scaleToFill" id="CWj-Gr-7nZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hyg-yM-Orv">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="ROv-sT-9Yn">
+                                        <barButtonItem key="backBarButtonItem" title="Back" id="lu9-6N-2jl"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="zCO-Qd-hRb">
+                                            <connections>
+                                                <segue destination="BBg-5F-onR" kind="show" id="Xqg-Ig-fFY"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRf-UC-aNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1223" y="1157"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="Uep-3G-ZND">
-            <objects>
-                <tableViewController id="DYr-j0-nfN" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="32l-QC-7QC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ujX-ks-UNs">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ujX-ks-UNs" id="0fW-6f-LE6">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="DYr-j0-nfN" id="7zG-dH-gIg"/>
-                            <outlet property="delegate" destination="DYr-j0-nfN" id="RfC-VP-Yp5"/>
-                        </connections>
-                    </tableView>
-                    <connections>
-                        <segue destination="tZR-nV-nv9" kind="show" identifier="SettingSegue" id="0px-Co-3SJ"/>
-                        <segue destination="3PV-16-F2m" kind="show" identifier="StatsSegue" id="Thi-uQ-qUj"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CUl-NV-h3X" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1223" y="225"/>
-        </scene>
-        <!--Settings View Controller-->
-        <scene sceneID="zes-Kb-jI6">
-            <objects>
-                <viewController id="tZR-nV-nv9" customClass="SettingsViewController" customModule="SmartCubing" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bOL-ci-NSf"/>
-                        <viewControllerLayoutGuide type="bottom" id="dTA-dB-PT4"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xzQ-ud-jhQ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iXm-it-k28" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1957" y="-441"/>
+            <point key="canvasLocation" x="1637" y="483"/>
         </scene>
     </scenes>
 </document>
