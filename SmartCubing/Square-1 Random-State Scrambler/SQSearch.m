@@ -22,7 +22,7 @@
 @implementation SQSearch
 @synthesize length1, maxlen2, c, d, sq;
 
-static int move[100];
+static int moveArray[100];
 
 +(int) getNParity:(int) idx n:(int) n {
     int p = 0;
@@ -95,17 +95,18 @@ public static void main(String[] args) {
         return maxl==0 && [self init2];
     }
     
-    //try each possible move. First twist;
+    //try each possible moveArray. First twist;
     if (lm != 0) {
         int shapex = [SQShape TwistMove][shape];
         int prunx = [SQShape ShapePrun][shapex];
         if (prunx < maxl) {
-            move[depth] = 0;
+            moveArray[depth] = 0;
             if ([self phase1:shapex prunVal:prunx maxLength:maxl-1 depth:depth+1 lm:0]) {
                 return true;
             }
         }
     }
+    
     
     //Try top layer
     int shapex = shape;
@@ -122,7 +123,7 @@ public static void main(String[] args) {
             if (prunx > maxl) {
                 break;
             } else if (prunx < maxl) {
-                move[depth] = m;
+                moveArray[depth] = m;
                 if ([self phase1:shapex prunVal:prunx maxLength:maxl-1 depth:depth+1 lm:1]) {
                     return true;
                 }
@@ -145,7 +146,7 @@ public static void main(String[] args) {
             if (prunx > maxl) {
                 break;
             } else if (prunx < maxl) {
-                move[depth] = -m;
+                moveArray[depth] = -m;
                 if ([self phase1:shapex prunVal:prunx maxLength:maxl-1 depth:depth+1 lm:2]) {
                     return true;
                 }
@@ -164,7 +165,7 @@ public static void main(String[] args) {
     //		System.out.print('\r');
     [d copy:c];
     for (int i=0; i<length1; i++) {
-        [d doMove:(move[i])];
+        [d doMove:(moveArray[i])];
     }
     assert([SQShape ShapePrun][[d getShapeIdx]] == 0);
     //		if(1==1)return false;
@@ -188,7 +189,7 @@ public static void main(String[] args) {
             
             //Unnecessary Code. Just for checking whether the solution is correct.
             	//			for (int j=0; j<i; j++) {
-            	//				[d doMove:(move[length1+j])];
+            	//				[d doMove:(moveArray[length1+j])];
             	//			}
             //				System.out.println();
            // NSLog(@"%i, %X, %X, %X, %X", [d getShapeIdx], d.ul, d.ur, d.dl, d.dr);
@@ -212,7 +213,7 @@ public static void main(String[] args) {
     NSMutableString *s = [[NSMutableString alloc] init];
     int top = 0, bottom = 0;
     for (int i=len-1; i>=0; i--) {
-        int val = move[i];
+        int val = moveArray[i];
         if (val > 0) {
             val = 12 - val;
             top = (val > 6) ? (val-12) : val;
@@ -251,7 +252,7 @@ BOOL sq1phase2(int edge, int corner, BOOL topEdgeFirst, BOOL botEdgeFirst, int m
         int cornerx = TwistMove[corner];
         
         if (SquarePrun[edgex<<1|(1-ml)] < maxl && SquarePrun[cornerx<<1|(1-ml)] < maxl) {
-            move[depth] = 0;
+            moveArray[depth] = 0;
             if (sq1phase2(edgex, cornerx, topEdgeFirst, botEdgeFirst, 1-ml, maxl-1, depth+1, 0)) {
                 return true;
             }
@@ -268,7 +269,7 @@ BOOL sq1phase2(int edge, int corner, BOOL topEdgeFirst, BOOL botEdgeFirst, int m
         int prun2 = SquarePrun[cornerx<<1|ml];
         while (m < 12 && prun1 <= maxl && prun1 <= maxl) {
             if (prun1 < maxl && prun2 < maxl) {
-                move[depth] = m;
+                moveArray[depth] = m;
                 if (sq1phase2(edgex, cornerx, topEdgeFirstx, botEdgeFirst, ml, maxl-1, depth+1, 1)) {
                     return true;
                 }
@@ -295,7 +296,7 @@ BOOL sq1phase2(int edge, int corner, BOOL topEdgeFirst, BOOL botEdgeFirst, int m
         int prun2 = SquarePrun[cornerx<<1|ml];
         while (m < (maxl > 6 ? 6 : 12) && prun1 <= maxl && prun1 <= maxl) {
             if (prun1 < maxl && prun2 < maxl) {
-                move[depth] = -m;
+                moveArray[depth] = -m;
                 if (sq1phase2(edgex, cornerx, topEdgeFirst, botEdgeFirstx, ml, maxl-1, depth+1, 2)) {
                     return true;
                 }

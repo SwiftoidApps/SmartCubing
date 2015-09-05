@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RandomNumber.h"
 
 @interface CubeScrambler : NSObject {
     int *seq;

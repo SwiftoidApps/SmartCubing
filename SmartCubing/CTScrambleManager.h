@@ -5,6 +5,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @class CubeScrambler, ClockScrambler, TwoPhaseScrambler, TwoByTwoRandomState, SQSearch;
 
 @interface CTScrambleManager : NSObject
