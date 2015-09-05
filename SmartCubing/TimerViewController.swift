@@ -13,6 +13,10 @@ class TimerViewController: UIViewController {
     var startTime = NSTimeInterval()
     var timer = NSTimer()
     
+    var startTouchTime = NSDate.timeIntervalSinceReferenceDate()
+    
+    var colorTimer: NSTimer = NSTimer()
+    
     @IBOutlet weak var timerLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +29,35 @@ class TimerViewController: UIViewController {
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+
         if(!timing) {
+            startTouchTime = NSDate.timeIntervalSinceReferenceDate()
+            self.view.backgroundColor = UIColor(red: 212.0/255, green: 49.0/255, blue: 49.0/255, alpha: 1)
+            colorTimer = NSTimer.scheduledTimerWithTimeInterval(0.75, target: self, selector:  Selector("turnGreen"), userInfo: nil, repeats: false)
+
+        }
+    }
+    
+    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+        if(!timing) {
+        var endTouchTime = NSDate.timeIntervalSinceReferenceDate()
+        var touchDuration = endTouchTime - startTouchTime
+        if(touchDuration > 0.75) {
             startTimer()
+        }
         } else {
             stopTimer()
+        }
+        self.view.backgroundColor = UIColor.whiteColor()
+        
+    }
+    
+    func turnGreen () {
+        var touchTimeSoFar = NSDate.timeIntervalSinceReferenceDate() - startTouchTime
+        if(touchTimeSoFar > 0.75) {
+        self.view.backgroundColor = UIColor(red: 14.0/255, green: 196.0/255, blue: 29.0/255, alpha: 1)
+        } else {
+            colorTimer = NSTimer.scheduledTimerWithTimeInterval(0.75 - touchTimeSoFar, target: self, selector: Selector("turnGreen"), userInfo: nil, repeats: false)
         }
     }
     // Updates display label
@@ -64,6 +93,7 @@ class TimerViewController: UIViewController {
     
     func stopTimer() {
         timing = false
+        timer.invalidate()
     }
 
     /*
