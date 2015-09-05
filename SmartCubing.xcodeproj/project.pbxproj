@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DE4A5CD1B9B83EB00D11F8D /* ScrambleGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE4A5CC1B9B83EB00D11F8D /* ScrambleGenerator.swift */; };
 		7D15E0F71B9B42E800AFFF64 /* ClockScrambler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D15E0D01B9B42E800AFFF64 /* ClockScrambler.m */; };
 		7D15E0F81B9B42E800AFFF64 /* CTScrambleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D15E0D21B9B42E800AFFF64 /* CTScrambleManager.m */; };
 		7D15E0F91B9B42E800AFFF64 /* CubeScrambler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D15E0D41B9B42E800AFFF64 /* CubeScrambler.m */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3DE4A5CC1B9B83EB00D11F8D /* ScrambleGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrambleGenerator.swift; sourceTree = "<group>"; };
 		7D15E0CE1B9B42E800AFFF64 /* SmartCubing-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartCubing-Bridging-Header.h"; sourceTree = "<group>"; };
 		7D15E0CF1B9B42E800AFFF64 /* ClockScrambler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockScrambler.h; sourceTree = "<group>"; };
 		7D15E0D01B9B42E800AFFF64 /* ClockScrambler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockScrambler.m; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				7D15E10D1B9B478400AFFF64 /* Controllers */,
 				7D15E0CD1B9B427D00AFFF64 /* Scrambler */,
 				933D6CA51B9A992C0072E4CD /* AppDelegate.swift */,
+				3DE4A5CC1B9B83EB00D11F8D /* ScrambleGenerator.swift */,
 				933D6CA71B9A992C0072E4CD /* ViewController.swift */,
 				933D6CA91B9A992C0072E4CD /* Main.storyboard */,
 				933D6CAC1B9A992C0072E4CD /* Images.xcassets */,
@@ -298,6 +301,7 @@
 		933D6C981B9A992C0072E4CD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = Swiftoid;
 				TargetAttributes = {
@@ -356,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D15E1001B9B42E800AFFF64 /* SQShape.m in Sources */,
+				3DE4A5CD1B9B83EB00D11F8D /* ScrambleGenerator.swift in Sources */,
 				7D15E1021B9B42E800AFFF64 /* Square1Scrambler.m in Sources */,
 				933D6CA81B9A992C0072E4CD /* ViewController.swift in Sources */,
 				7D15E0FF1B9B42E800AFFF64 /* SQSearch.m in Sources */,

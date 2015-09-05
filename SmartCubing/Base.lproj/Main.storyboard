@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1112" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BBg-5F-onR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BBg-5F-onR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -44,7 +44,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gAA-5J-jJt">
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gAA-5J-jJt">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Smart Cubing" id="KLg-Ji-FZI">
@@ -59,8 +59,23 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coz-jN-3AS">
+                                <rect key="frame" x="218" y="281" width="165" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="60S-HH-MYY"/>
+                                    <constraint firstAttribute="width" constant="165" id="vUl-Kl-ngJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="JrP-ru-VR8" firstAttribute="top" secondItem="coz-jN-3AS" secondAttribute="bottom" constant="238" id="0xl-rm-t5Q"/>
+                            <constraint firstItem="coz-jN-3AS" firstAttribute="centerX" secondItem="gAA-5J-jJt" secondAttribute="centerX" id="5qy-tQ-EjK"/>
+                            <constraint firstItem="coz-jN-3AS" firstAttribute="centerX" secondItem="CyA-mU-pI8" secondAttribute="centerX" id="z0V-Vl-o20"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" id="Pmf-jp-IXz"/>
                     <toolbarItems/>
@@ -68,10 +83,11 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="selectScrambleType" destination="ezy-Zz-OvC" id="zPM-Dk-kU4"/>
+                        <outlet property="timerLabel" destination="coz-jN-3AS" id="42y-Y3-YgK"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="926" y="1037"/>
+            <point key="canvasLocation" x="838" y="393"/>
         </scene>
         <!--Select Scramble Style View Controller-->
         <scene sceneID="czd-re-TTl">
