@@ -27,6 +27,9 @@
 		7D15E1081B9B42E800AFFF64 /* TwoPhaseScrambler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D15E0F21B9B42E800AFFF64 /* TwoPhaseScrambler.m */; };
 		7D15E1091B9B42E800AFFF64 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D15E0F41B9B42E800AFFF64 /* Util.m */; };
 		7D15E10A1B9B42E800AFFF64 /* TwoByTwoRandomState.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D15E0F61B9B42E800AFFF64 /* TwoByTwoRandomState.m */; };
+		7D15E10C1B9B477E00AFFF64 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D15E10B1B9B477E00AFFF64 /* TimerViewController.swift */; };
+		7D15E10F1B9B47A600AFFF64 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D15E10E1B9B47A600AFFF64 /* SettingsViewController.swift */; };
+		7D15E1131B9B47D700AFFF64 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D15E1121B9B47D700AFFF64 /* StatsViewController.swift */; };
 		933D6CA61B9A992C0072E4CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D6CA51B9A992C0072E4CD /* AppDelegate.swift */; };
 		933D6CA81B9A992C0072E4CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D6CA71B9A992C0072E4CD /* ViewController.swift */; };
 		933D6CAB1B9A992C0072E4CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 933D6CA91B9A992C0072E4CD /* Main.storyboard */; };
@@ -85,6 +88,9 @@
 		7D15E0F41B9B42E800AFFF64 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		7D15E0F51B9B42E800AFFF64 /* TwoByTwoRandomState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoByTwoRandomState.h; sourceTree = "<group>"; };
 		7D15E0F61B9B42E800AFFF64 /* TwoByTwoRandomState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoByTwoRandomState.m; sourceTree = "<group>"; };
+		7D15E10B1B9B477E00AFFF64 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		7D15E10E1B9B47A600AFFF64 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7D15E1121B9B47D700AFFF64 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		933D6CA01B9A992C0072E4CD /* SmartCubing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartCubing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		933D6CA41B9A992C0072E4CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		933D6CA51B9A992C0072E4CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +182,16 @@
 			path = "Two-Phase Scrambler";
 			sourceTree = "<group>";
 		};
+		7D15E10D1B9B478400AFFF64 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7D15E10B1B9B477E00AFFF64 /* TimerViewController.swift */,
+				7D15E10E1B9B47A600AFFF64 /* SettingsViewController.swift */,
+				7D15E1121B9B47D700AFFF64 /* StatsViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		933D6C971B9A992C0072E4CD = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +213,7 @@
 		933D6CA21B9A992C0072E4CD /* SmartCubing */ = {
 			isa = PBXGroup;
 			children = (
+				7D15E10D1B9B478400AFFF64 /* Controllers */,
 				7D15E0CD1B9B427D00AFFF64 /* Scrambler */,
 				933D6CA51B9A992C0072E4CD /* AppDelegate.swift */,
 				933D6CA71B9A992C0072E4CD /* ViewController.swift */,
@@ -345,16 +362,19 @@
 				7D15E0F81B9B42E800AFFF64 /* CTScrambleManager.m in Sources */,
 				7D15E0F71B9B42E800AFFF64 /* ClockScrambler.m in Sources */,
 				7D15E1081B9B42E800AFFF64 /* TwoPhaseScrambler.m in Sources */,
+				7D15E1131B9B47D700AFFF64 /* StatsViewController.swift in Sources */,
 				7D15E0FC1B9B42E800AFFF64 /* RandomNumber.m in Sources */,
 				7D15E1071B9B42E800AFFF64 /* SolveFormatConverter.m in Sources */,
 				7D15E1011B9B42E800AFFF64 /* SQSquare.m in Sources */,
 				7D15E1051B9B42E800AFFF64 /* Search.m in Sources */,
 				7D15E0FB1B9B42E800AFFF64 /* PyraminxRandomStateScrambler.m in Sources */,
+				7D15E10F1B9B47A600AFFF64 /* SettingsViewController.swift in Sources */,
 				933D6CA61B9A992C0072E4CD /* AppDelegate.swift in Sources */,
 				7D15E1091B9B42E800AFFF64 /* Util.m in Sources */,
 				7D15E1031B9B42E800AFFF64 /* CoordCube.m in Sources */,
 				7D15E0FE1B9B42E800AFFF64 /* SQFullCube.m in Sources */,
 				7D15E0F91B9B42E800AFFF64 /* CubeScrambler.m in Sources */,
+				7D15E10C1B9B477E00AFFF64 /* TimerViewController.swift in Sources */,
 				7D15E0FA1B9B42E800AFFF64 /* MegaminxScrambler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
