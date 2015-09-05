@@ -139,7 +139,7 @@ class ScrambleGenerator {
         
         var returnString = ""
         
-        for character in scramble.characters {
+        for character in scramble {
             if (character == "U") {
                 returnString += arc4random_uniform(2) == 1 ? "'" : ""
             } else if (character == " "){
@@ -150,7 +150,7 @@ class ScrambleGenerator {
             }
         }
         
-        return split(returnString.characters) {$0 == " "}.map{String($0)}
+        return split(returnString) {$0 == " "}.map{String($0)}
     }
     
     static func getScrambleFor6x6() -> [String] {
@@ -158,16 +158,16 @@ class ScrambleGenerator {
         let base = createScramble(80)
         var returnArray : [String] = []
         
-        for var move in base {
+        for move in base {
             let modType = arc4random_uniform(3)
             switch (modType) {
             case 0:
-                move = "3" + move
-                returnArray.append(move)
+                var move2 = "3" + move
+                returnArray.append(move2)
                 break;
             case 1:
-                move = move.lowercaseString
-                returnArray.append(move)
+                var move2 = move.lowercaseString
+                returnArray.append(move2)
                 break;
             default:
                 returnArray.append(move)
@@ -182,16 +182,16 @@ class ScrambleGenerator {
         let base = createScramble(100)
         var returnArray : [String] = []
         
-        for var move in base {
+        for move in base {
             let modType = arc4random_uniform(3)
             switch (modType) {
             case 0:
-                move = "3" + move
-                returnArray.append(move)
+                var move2 = "3" + move
+                returnArray.append(move2)
                 break;
             case 1:
-                move = move.lowercaseString
-                returnArray.append(move)
+                var move2 = move.lowercaseString
+                returnArray.append(move2)
                 break;
             default:
                 returnArray.append(move)
