@@ -2,6 +2,8 @@
 //  TwoPhaseScrambler
 //  CubeTimer Scramblers
 //
+#import <Foundation/Foundation.h>
+#import "RandomNumber.h"
 
 @interface TwoPhaseScrambler : NSObject
 
