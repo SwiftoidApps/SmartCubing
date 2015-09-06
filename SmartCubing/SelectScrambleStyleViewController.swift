@@ -19,7 +19,7 @@ class SelectScrambleStyleViewController: UIViewController, UIPickerViewDataSourc
  
     
     var currentlySelectedScrambleType :Int = 1;
-    let SCRAMBLE_TABLE : [String] = ["2x2", "3x3", "4x4", "5x5", "Pryaminx", "Megaminx"];
+    let SCRAMBLE_TABLE : [String] = ["2x2", "3x3", "4x4", "5x5", "6x6", "7x7", "Pryaminx", "Megaminx", "Skewb"];
     
     override func viewDidLoad() {
         super.viewDidLoad()

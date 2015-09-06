@@ -43,18 +43,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coz-jN-3AS">
-                                <rect key="frame" x="218" y="281" width="165" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="60S-HH-MYY"/>
-                                    <constraint firstAttribute="width" constant="165" id="vUl-Kl-ngJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gAA-5J-jJt">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Smart Cubing" id="KLg-Ji-FZI">
                                         <barButtonItem key="leftBarButtonItem" title="4x4" id="ezy-Zz-OvC">
@@ -64,18 +54,40 @@
                                                 </segue>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Add Penalty" id="9Vi-xS-DmQ"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Penalty" id="9Vi-xS-DmQ"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coz-jN-3AS">
+                                <rect key="frame" x="218" y="366" width="165" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="165" id="97q-hs-CNu"/>
+                                    <constraint firstAttribute="height" constant="37" id="jAR-hG-bp2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generating" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMb-zR-xsa">
+                                <rect key="frame" x="0.0" y="28" width="600" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="vCP-4e-Nt9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="JrP-ru-VR8" firstAttribute="top" secondItem="coz-jN-3AS" secondAttribute="bottom" constant="238" id="0xl-rm-t5Q"/>
-                            <constraint firstItem="gAA-5J-jJt" firstAttribute="centerX" secondItem="coz-jN-3AS" secondAttribute="centerX" id="7U2-D2-qwS"/>
-                            <constraint firstItem="gAA-5J-jJt" firstAttribute="top" secondItem="CyA-mU-pI8" secondAttribute="top" id="Hip-2R-ifG"/>
-                            <constraint firstItem="gAA-5J-jJt" firstAttribute="leading" secondItem="CyA-mU-pI8" secondAttribute="leading" id="msA-d1-17g"/>
-                            <constraint firstItem="coz-jN-3AS" firstAttribute="centerX" secondItem="CyA-mU-pI8" secondAttribute="centerX" id="z0V-Vl-o20"/>
+                            <constraint firstItem="bMb-zR-xsa" firstAttribute="top" secondItem="lSF-X5-Al1" secondAttribute="bottom" constant="8" symbolic="YES" id="4S5-dp-VlT"/>
+                            <constraint firstItem="gAA-5J-jJt" firstAttribute="leading" secondItem="CyA-mU-pI8" secondAttribute="leading" id="b9y-ke-y0b"/>
+                            <constraint firstItem="gAA-5J-jJt" firstAttribute="trailing" secondItem="bMb-zR-xsa" secondAttribute="trailing" id="iTb-fZ-x16"/>
+                            <constraint firstAttribute="trailing" secondItem="gAA-5J-jJt" secondAttribute="trailing" id="nlp-PJ-t06"/>
+                            <constraint firstItem="JrP-ru-VR8" firstAttribute="top" secondItem="coz-jN-3AS" secondAttribute="bottom" constant="153" id="ogW-RV-fmc"/>
+                            <constraint firstItem="coz-jN-3AS" firstAttribute="centerX" secondItem="bMb-zR-xsa" secondAttribute="centerX" id="pQy-YH-A1a"/>
+                            <constraint firstItem="gAA-5J-jJt" firstAttribute="top" secondItem="lSF-X5-Al1" secondAttribute="bottom" id="ruN-rI-CPT"/>
+                            <constraint firstItem="bMb-zR-xsa" firstAttribute="leading" secondItem="gAA-5J-jJt" secondAttribute="leading" id="rxC-9k-b9I"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" id="Pmf-jp-IXz"/>
@@ -83,6 +95,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="scrambleLabel" destination="bMb-zR-xsa" id="eDg-IS-Q3X"/>
                         <outlet property="selectScrambleType" destination="ezy-Zz-OvC" id="zPM-Dk-kU4"/>
                         <outlet property="timerLabel" destination="coz-jN-3AS" id="42y-Y3-YgK"/>
                     </connections>
